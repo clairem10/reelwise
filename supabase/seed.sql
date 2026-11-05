@@ -1,0 +1,2 @@
+-- Course content is versioned in migrations/202611050002_curriculum.sql.
+-- This file is deliberately empty so `supabase db reset` and `supabase db push` agree.

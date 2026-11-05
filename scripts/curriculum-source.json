@@ -1,0 +1,1822 @@
+{
+  "course": "Data 140: Probability for Data Science",
+  "term": "Fall 2026",
+  "home": "https://data140.org/",
+  "fetched": "2026-11-04",
+  "bookCommit": "251e1026e2703c197c4b5a27a8e330900803fb3a",
+  "materialsCommit": "9490b87c345356e33a8593d9ba27ab8339165254",
+  "chapters": [
+    {
+      "id": "ch1",
+      "chapter": 1,
+      "title": "The fruit lottery",
+      "chapterTitle": "Fundamentals",
+      "hook": "A random draw needs a complete guest list.",
+      "frames": [
+        "List every possible outcome before calculating a chance.",
+        "Choose uniformly from apple, banana, orange, and pear.",
+        "Only one of the four outcomes is orange, so its chance is one quarter."
+      ],
+      "formula": "P(orange) = 1/4",
+      "q": "A uniform draw from four different fruits gives what chance of orange?",
+      "answers": [
+        "1/4",
+        "1/2"
+      ],
+      "correct": 0,
+      "why": "All four fruits are equally likely. Count one orange out of four.",
+      "mode": "lottery",
+      "video": "videos/ch01.mp4",
+      "source": "https://data140.org/textbook/content/chapter-01/fundamentals/",
+      "narratedUrl": "https://share.descript.com/view/haD3G0cxAAw",
+      "embedUrl": "https://share.descript.com/embed/haD3G0cxAAw",
+      "narratedCompositionId": "2736aea9-e02d-413b-a46c-072f16c3b413"
+    },
+    {
+      "id": "ch2",
+      "chapter": 2,
+      "title": "The overlap trap",
+      "chapterTitle": "Calculating Chances",
+      "hook": "Two invitations. One fruit. Don’t count it twice.",
+      "frames": [
+        "An event is a collection of outcomes. Two events can overlap.",
+        "Suppose P(A)=0.6, P(B)=0.5, and P(A and B)=0.2.",
+        "Add the first two probabilities, then subtract their overlap. The result is 0.9."
+      ],
+      "formula": "P(A or B) = 0.6 + 0.5 − 0.2 = 0.9",
+      "q": "What is the probability of A or B in this example?",
+      "answers": [
+        "0.9",
+        "1.1"
+      ],
+      "correct": 0,
+      "why": "The overlap is included in both 0.6 and 0.5. Subtract 0.2 once.",
+      "mode": "venn",
+      "video": "videos/ch02.mp4",
+      "source": "https://data140.org/textbook/content/chapter-02/calculating-chances/",
+      "narratedUrl": "https://share.descript.com/view/GO5mzKV9urI",
+      "embedUrl": "https://share.descript.com/embed/GO5mzKV9urI",
+      "narratedCompositionId": "9a904e20-513d-43a0-a4d1-fb6b5a41989b"
+    },
+    {
+      "id": "ch3",
+      "chapter": 3,
+      "title": "Give randomness a number",
+      "chapterTitle": "Random Variables",
+      "hook": "A random variable is a scoreboard for outcomes.",
+      "frames": [
+        "Imagine tossing a fair coin twice.",
+        "Let X count the heads. Its possible values are zero, one, and two.",
+        "The four equally likely outcomes give probabilities one quarter, one half, and one quarter."
+      ],
+      "formula": "P(X = 1) = 2/4",
+      "q": "For two fair independent tosses, what is P(exactly one head)?",
+      "answers": [
+        "1/2",
+        "1/4"
+      ],
+      "correct": 0,
+      "why": "HT and TH both count. Two favorable outcomes among four.",
+      "mode": "bars",
+      "video": "videos/ch03.mp4",
+      "source": "https://data140.org/textbook/content/chapter-03/random-variables/"
+    },
+    {
+      "id": "ch4",
+      "chapter": 4,
+      "title": "New information. New odds.",
+      "chapterTitle": "Relations Between Variables",
+      "hook": "The yellow-fruit clue changes the game.",
+      "frames": [
+        "A basket holds three red apples and two yellow bananas.",
+        "You learn the selected fruit is yellow. Only two outcomes remain.",
+        "Both are bananas. Given yellow, the chance of banana is one."
+      ],
+      "formula": "P(A | B) = P(A and B) / P(B)",
+      "q": "Given yellow in this basket, what is the chance of banana?",
+      "answers": [
+        "1",
+        "2/5"
+      ],
+      "correct": 0,
+      "why": "Condition on the clue: ignore the red apples, then count within yellow.",
+      "mode": "lottery",
+      "video": "videos/ch04.mp4",
+      "source": "https://data140.org/textbook/content/chapter-04/relations-between-variables/",
+      "narratedUrl": "https://share.descript.com/view/T3RxOh25epL",
+      "embedUrl": "https://share.descript.com/embed/T3RxOh25epL",
+      "narratedCompositionId": "cee32175-0b25-49f6-9ef9-4d10dfd3a6c9"
+    },
+    {
+      "id": "ch5",
+      "chapter": 5,
+      "title": "At least one? Flip it.",
+      "chapterTitle": "Collections of Events",
+      "hook": "Sometimes the easiest route is the opposite event.",
+      "frames": [
+        "Toss a fair coin independently three times.",
+        "The only way to get no heads is TTT, with chance one eighth.",
+        "At least one head has probability one minus one eighth, or seven eighths."
+      ],
+      "formula": "P(at least one H) = 1 − 1/8",
+      "q": "What is the chance of at least one head in three fair tosses?",
+      "answers": [
+        "7/8",
+        "3/8"
+      ],
+      "correct": 0,
+      "why": "Start with all tails: (1/2) cubed. Subtract that from one.",
+      "mode": "lottery",
+      "video": "videos/ch05.mp4",
+      "source": "https://data140.org/textbook/content/chapter-05/collections-of-events/"
+    },
+    {
+      "id": "ch6",
+      "chapter": 6,
+      "title": "Count the wins",
+      "chapterTitle": "Random Counts",
+      "hook": "A binomial counts successes under specific rules.",
+      "frames": [
+        "Run ten independent trials, each with success chance 0.3.",
+        "The count of successes has a binomial distribution.",
+        "Its expected count is ten times 0.3, which equals three."
+      ],
+      "formula": "X ~ Binomial(10, 0.3); E(X) = 3",
+      "q": "What is the expected number of successes?",
+      "answers": [
+        "3",
+        "0.3"
+      ],
+      "correct": 0,
+      "why": "The expected count is number of trials times chance per trial.",
+      "mode": "bars",
+      "video": "videos/ch06.mp4",
+      "source": "https://data140.org/textbook/content/chapter-06/random-counts/"
+    },
+    {
+      "id": "ch7",
+      "chapter": 7,
+      "title": "A random-sized crowd",
+      "chapterTitle": "Poissonization",
+      "hook": "Poissonization makes some counts independent.",
+      "frames": [
+        "Suppose the number of visitors is Poisson with mean eight.",
+        "Independently, each visitor chooses berries with probability one quarter.",
+        "The berry count is Poisson with mean two; the other count is independent of it."
+      ],
+      "formula": "8 × 1/4 = 2",
+      "q": "What is the mean of the berry count?",
+      "answers": [
+        "2",
+        "8"
+      ],
+      "correct": 0,
+      "why": "Thin a Poisson count by multiplying its mean by the selection chance.",
+      "mode": "bars",
+      "video": "videos/ch07.mp4",
+      "source": "https://data140.org/textbook/content/chapter-07/poissonization/"
+    },
+    {
+      "id": "ch8",
+      "chapter": 8,
+      "title": "Average isn’t a promise",
+      "chapterTitle": "Expectation",
+      "hook": "Expectation is a weighted balance point.",
+      "frames": [
+        "A game pays zero tokens with chance one half and six tokens otherwise.",
+        "Multiply each payout by its probability, then add.",
+        "The expected payout is three tokens, even though the game never pays three."
+      ],
+      "formula": "E(X) = 0 × 0.5 + 6 × 0.5 = 3",
+      "q": "Must an expectation be a possible outcome?",
+      "answers": [
+        "No",
+        "Yes"
+      ],
+      "correct": 0,
+      "why": "An average can lie between the actual outcomes. This game pays only zero or six.",
+      "mode": "bars",
+      "video": "videos/ch08.mp4",
+      "source": "https://data140.org/textbook/content/chapter-08/expectation/"
+    },
+    {
+      "id": "ch9",
+      "chapter": 9,
+      "title": "Split, then average",
+      "chapterTitle": "Conditioning Revisited",
+      "hook": "Conditioning turns one big question into smaller ones.",
+      "frames": [
+        "Half the days are busy with expected sales of ten baskets.",
+        "The other half are quiet with expected sales of four baskets.",
+        "Weight each conditional average by its probability: the overall expectation is seven."
+      ],
+      "formula": "E(X) = 0.5 × 10 + 0.5 × 4 = 7",
+      "q": "What is the overall expected number of baskets sold?",
+      "answers": [
+        "7",
+        "14"
+      ],
+      "correct": 0,
+      "why": "Take the average of ten and four because the two day types are equally likely.",
+      "mode": "bars",
+      "video": "videos/ch09.mp4",
+      "source": "https://data140.org/textbook/content/chapter-09/conditioning-revisited/"
+    },
+    {
+      "id": "ch10",
+      "chapter": 10,
+      "title": "Only the present matters",
+      "chapterTitle": "Markov Chains",
+      "hook": "A Markov chain carries a very short memory.",
+      "frames": [
+        "A fruit cart moves between a market and a park.",
+        "For a Markov chain, next-step probabilities depend on its current state.",
+        "Once you know where it is now, earlier locations add no information about the next step."
+      ],
+      "formula": "P(next | present, past) = P(next | present)",
+      "q": "What determines the next-step distribution in a Markov chain?",
+      "answers": [
+        "The current state",
+        "Every earlier state"
+      ],
+      "correct": 0,
+      "why": "The Markov assumption removes extra dependence on the past once the present is known.",
+      "mode": "chain",
+      "video": "videos/ch10.mp4",
+      "source": "https://data140.org/textbook/content/chapter-10/markov-chains/"
+    },
+    {
+      "id": "ch11",
+      "chapter": 11,
+      "title": "Sample by wandering",
+      "chapterTitle": "Markov Chain Monte Carlo",
+      "hook": "MCMC uses movement to explore a distribution.",
+      "frames": [
+        "Build a Markov chain with the target distribution as stationary.",
+        "Detailed balance is a sufficient way to verify stationarity.",
+        "Convergence needs suitable conditions; successive samples are generally dependent."
+      ],
+      "formula": "π(i)P(i,j) = π(j)P(j,i)",
+      "q": "Are successive MCMC samples generally independent?",
+      "answers": [
+        "No",
+        "Yes"
+      ],
+      "correct": 0,
+      "why": "A chain moves from its current state, so nearby samples are usually dependent.",
+      "mode": "chain",
+      "video": "videos/ch11.mp4",
+      "source": "https://data140.org/textbook/content/chapter-11/markov-chain-monte-carlo/"
+    },
+    {
+      "id": "ch12",
+      "chapter": 12,
+      "title": "How wobbly is it?",
+      "chapterTitle": "Standard Deviation",
+      "hook": "Variance measures squared distance from the mean.",
+      "frames": [
+        "A random payout is zero or four, each equally likely.",
+        "Its mean is two. Each payout lies two away from the mean.",
+        "The variance is four, and the standard deviation is its square root: two."
+      ],
+      "formula": "Var(X) = 4; SD(X) = 2",
+      "q": "What is the standard deviation of this payout?",
+      "answers": [
+        "2",
+        "4"
+      ],
+      "correct": 0,
+      "why": "Square the deviations to get variance, then take the square root for SD.",
+      "mode": "bell",
+      "video": "videos/ch12.mp4",
+      "source": "https://data140.org/textbook/content/chapter-12/standard-deviation/"
+    },
+    {
+      "id": "ch13",
+      "chapter": 13,
+      "title": "Do they move together?",
+      "chapterTitle": "Variance Via Covariance",
+      "hook": "Covariance reveals why variances don’t always just add.",
+      "frames": [
+        "For any two variables with finite second moments, include covariance.",
+        "The variance of their sum is each variance plus twice their covariance.",
+        "Independent variables have zero covariance, but the reverse need not hold."
+      ],
+      "formula": "Var(X+Y) = Var(X)+Var(Y)+2Cov(X,Y)",
+      "q": "Does zero covariance always imply independence?",
+      "answers": [
+        "No",
+        "Yes"
+      ],
+      "correct": 0,
+      "why": "Zero covariance only rules out linear association in general.",
+      "mode": "bars",
+      "video": "videos/ch13.mp4",
+      "source": "https://data140.org/textbook/content/chapter-13/variance-via-covariance/"
+    },
+    {
+      "id": "ch14",
+      "chapter": 14,
+      "title": "The bell emerges",
+      "chapterTitle": "The Central Limit Theorem",
+      "hook": "Averages can look normal even when individual values don’t.",
+      "frames": [
+        "Take a large independent, identically distributed sample.",
+        "If the population has finite, positive variance, the standardized sum approaches normal.",
+        "The standard deviation of the sample mean is population SD divided by square root of sample size."
+      ],
+      "formula": "SD(mean) = σ / √n",
+      "q": "If n quadruples, what happens to the SD of the mean?",
+      "answers": [
+        "It halves",
+        "It quarters"
+      ],
+      "correct": 0,
+      "why": "The denominator is square root of n. Quadrupling n doubles that denominator.",
+      "mode": "bell",
+      "video": "videos/ch14.mp4",
+      "source": "https://data140.org/textbook/content/chapter-14/the-central-limit-theorem/"
+    },
+    {
+      "id": "ch15",
+      "chapter": 15,
+      "title": "Probability is area",
+      "chapterTitle": "Continuous Distributions",
+      "hook": "A density’s height isn’t a probability by itself.",
+      "frames": [
+        "For a continuous variable with a density, find probability by area.",
+        "An interval probability is the integral of the density across it.",
+        "One exact point has probability zero, even if the density there is positive."
+      ],
+      "formula": "P(a < X < b) = integral of f from a to b",
+      "q": "Can a positive density at x still mean P(X=x)=0?",
+      "answers": [
+        "Yes",
+        "No"
+      ],
+      "correct": 0,
+      "why": "An individual point has zero width, hence zero area.",
+      "mode": "bell",
+      "video": "videos/ch15.mp4",
+      "source": "https://data140.org/textbook/content/chapter-15/continuous-distributions/"
+    },
+    {
+      "id": "ch16",
+      "chapter": 16,
+      "title": "Stretch the scale",
+      "chapterTitle": "Transformations",
+      "hook": "Transform the axis; preserve the probability.",
+      "frames": [
+        "Let X be uniform between zero and one, and set Y=2X.",
+        "The possible values stretch across zero to two.",
+        "To keep total area one, the density drops to one half on that interval."
+      ],
+      "formula": "Y = 2X; fY(y) = 1/2 for 0 < y < 2",
+      "q": "What is the density of Y inside its interval?",
+      "answers": [
+        "1/2",
+        "2"
+      ],
+      "correct": 0,
+      "why": "The interval doubles in width, so the density halves to preserve total area.",
+      "mode": "bars",
+      "video": "videos/ch16.mp4",
+      "source": "https://data140.org/textbook/content/chapter-16/transformations/"
+    },
+    {
+      "id": "ch17",
+      "chapter": 17,
+      "title": "Two dimensions, one chance",
+      "chapterTitle": "Joint Densities",
+      "hook": "A joint density spreads probability across a plane.",
+      "frames": [
+        "For two continuous variables, integrate a joint density over a region.",
+        "Integrating out one coordinate gives the marginal density of the other.",
+        "For independent uniform variables on the unit square, a rectangle has probability equal to its area."
+      ],
+      "formula": "P(X<0.5, Y<0.5) = 0.25",
+      "q": "For independent uniform(0,1) X and Y, what is P(X<0.5,Y<0.5)?",
+      "answers": [
+        "0.25",
+        "0.5"
+      ],
+      "correct": 0,
+      "why": "The lower-left square has side one half and area one quarter.",
+      "mode": "grid",
+      "video": "videos/ch17.mp4",
+      "source": "https://data140.org/textbook/content/chapter-17/joint-densities/"
+    },
+    {
+      "id": "ch18",
+      "chapter": 18,
+      "title": "Add the right family",
+      "chapterTitle": "The Normal and Gamma Families",
+      "hook": "Some distribution families stay familiar under addition.",
+      "frames": [
+        "Independent normal variables add to another normal variable.",
+        "Add their means and add their variances, not their standard deviations.",
+        "Independent gamma variables with a common rate also add, by adding their shape parameters."
+      ],
+      "formula": "N(1,4) + N(2,9) → N(3,13)",
+      "q": "Using mean-variance notation, what variance does the sum have?",
+      "answers": [
+        "13",
+        "5"
+      ],
+      "correct": 0,
+      "why": "Independence lets you add variances: four plus nine.",
+      "mode": "bell",
+      "video": "videos/ch18.mp4",
+      "source": "https://data140.org/textbook/content/chapter-18/the-normal-and-gamma-families/"
+    },
+    {
+      "id": "ch19",
+      "chapter": 19,
+      "title": "Package a distribution",
+      "chapterTitle": "Distributions of Sums",
+      "hook": "Moment generating functions turn sums into products.",
+      "frames": [
+        "The MGF of X is the expectation of exp(tX).",
+        "When it exists near zero, its derivatives at zero give moments.",
+        "For independent X and Y, the MGF of their sum is the product of their MGFs."
+      ],
+      "formula": "M(X+Y)(t) = MX(t) MY(t)",
+      "q": "For independent variables, MGFs of sums combine how?",
+      "answers": [
+        "By multiplication",
+        "By subtraction"
+      ],
+      "correct": 0,
+      "why": "The exponential of a sum factors; independence factors the expectation.",
+      "mode": "chain",
+      "video": "videos/ch19.mp4",
+      "source": "https://data140.org/textbook/content/chapter-19/distributions-of-sums/"
+    },
+    {
+      "id": "ch20",
+      "chapter": 20,
+      "title": "Which parameter fits?",
+      "chapterTitle": "Approaches to Estimation",
+      "hook": "Likelihood asks which model best explains the observations.",
+      "frames": [
+        "Observe seven heads in ten independent tosses with a common chance p.",
+        "The likelihood is proportional to p to the seventh times (1-p) cubed.",
+        "Its maximum occurs at p=0.7. An MLE is not a posterior probability."
+      ],
+      "formula": "p-hat = 7/10 = 0.7",
+      "q": "What is the maximum likelihood estimate of p?",
+      "answers": [
+        "0.7",
+        "0.3"
+      ],
+      "correct": 0,
+      "why": "For independent Bernoulli trials with common p, the MLE is the observed success fraction.",
+      "mode": "bars",
+      "video": "videos/ch20.mp4",
+      "source": "https://data140.org/textbook/content/chapter-20/approaches-to-estimation/"
+    },
+    {
+      "id": "ch21",
+      "chapter": 21,
+      "title": "Let evidence update belief",
+      "chapterTitle": "The Beta and the Binomial",
+      "hook": "Beta and binomial make an especially convenient pair.",
+      "frames": [
+        "Start with a Beta(2,2) prior for a coin’s head probability.",
+        "Observe three heads and one tail in independent trials given p.",
+        "The posterior is Beta(5,3); its mean, and next-head probability, is five eighths."
+      ],
+      "formula": "Beta(2,2) → Beta(5,3)",
+      "q": "What is the posterior predictive probability of the next head?",
+      "answers": [
+        "5/8",
+        "3/4"
+      ],
+      "correct": 0,
+      "why": "Add heads to the first shape and tails to the second, then use 5/(5+3).",
+      "mode": "bell",
+      "video": "videos/ch21.mp4",
+      "source": "https://data140.org/textbook/content/chapter-21/the-beta-and-the-binomial/"
+    },
+    {
+      "id": "ch22",
+      "chapter": 22,
+      "title": "The best squared-error guess",
+      "chapterTitle": "Prediction",
+      "hook": "Conditional expectation is a prediction rule.",
+      "frames": [
+        "When X is observed, predict Y using its conditional mean.",
+        "Among predictors based on X, this minimizes expected squared error, assuming finite second moments.",
+        "Total variance splits into the variance of conditional means and the average conditional variance."
+      ],
+      "formula": "Var(Y) = Var(E[Y|X]) + E[Var(Y|X)]",
+      "q": "Which predictor minimizes expected squared error?",
+      "answers": [
+        "E[Y|X]",
+        "Always zero"
+      ],
+      "correct": 0,
+      "why": "Use the average of Y among outcomes consistent with the observed X.",
+      "mode": "grid",
+      "video": "videos/ch22.mp4",
+      "source": "https://data140.org/textbook/content/chapter-22/prediction/"
+    },
+    {
+      "id": "ch23",
+      "chapter": 23,
+      "title": "A cloud of variables",
+      "chapterTitle": "Multivariate Normal RVs",
+      "hook": "Joint normality is stronger than normal marginals.",
+      "frames": [
+        "A jointly normal vector has normally distributed linear combinations.",
+        "Its mean vector and covariance matrix describe its distribution.",
+        "For jointly normal components, zero covariance implies independence."
+      ],
+      "formula": "Joint normal + zero covariance ⇒ independence",
+      "q": "Does zero covariance imply independence for jointly normal components?",
+      "answers": [
+        "Yes",
+        "No"
+      ],
+      "correct": 0,
+      "why": "Joint normality is the extra condition that makes this implication valid.",
+      "mode": "grid",
+      "video": "videos/ch23.mp4",
+      "source": "https://data140.org/textbook/content/chapter-23/multivariate-normal-rvs/"
+    },
+    {
+      "id": "ch24",
+      "chapter": 24,
+      "title": "The best straight-line guess",
+      "chapterTitle": "Simple Linear Regression",
+      "hook": "Regression balances association and spread.",
+      "frames": [
+        "The best linear predictor uses slope Cov(X,Y) divided by Var(X), if Var(X)>0.",
+        "Equivalently, slope is correlation times SD(Y) divided by SD(X).",
+        "This is a linear least-squares prediction, not automatically a causal effect."
+      ],
+      "formula": "slope = r × SD(Y) / SD(X)",
+      "q": "If r=0.5, SD(Y)=4, SD(X)=2, what is the slope?",
+      "answers": [
+        "1",
+        "4"
+      ],
+      "correct": 0,
+      "why": "Multiply 0.5 by four divided by two.",
+      "mode": "grid",
+      "video": "videos/ch24.mp4",
+      "source": "https://data140.org/textbook/content/chapter-24/simple-linear-regression/"
+    },
+    {
+      "id": "ch25",
+      "chapter": 25,
+      "title": "More clues. One prediction.",
+      "chapterTitle": "Multiple Regression",
+      "hook": "Multiple regression combines several predictors.",
+      "frames": [
+        "Arrange predictors into a vector X with covariance matrix Σ.",
+        "When Σ is invertible, the best linear slope vector solves Σβ=Cov(X,Y).",
+        "Correlated predictors must be handled together; separate simple slopes usually won’t work."
+      ],
+      "formula": "β = Σ⁻¹ Cov(X,Y)",
+      "q": "Can correlated predictors generally be fitted by combining separate simple slopes?",
+      "answers": [
+        "No",
+        "Yes"
+      ],
+      "correct": 0,
+      "why": "Each multiple-regression coefficient accounts for the other predictors.",
+      "mode": "grid",
+      "video": "videos/ch25.mp4",
+      "source": "https://data140.org/textbook/content/chapter-25/multiple-regression/"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Fundamentals",
+      "path": "content/Chapter_01/00_Fundamentals.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/00_Fundamentals.ipynb"
+    },
+    {
+      "title": "Outcome Space and Events",
+      "path": "content/Chapter_01/01_Outcome_Space_and_Events.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/01_Outcome_Space_and_Events.ipynb"
+    },
+    {
+      "title": "Equally Likely Outcomes",
+      "path": "content/Chapter_01/02_Equally_Likely_Outcomes.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/02_Equally_Likely_Outcomes.ipynb"
+    },
+    {
+      "title": "Collisions in Hashing",
+      "path": "content/Chapter_01/03_Collisions_in_Hashing.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/03_Collisions_in_Hashing.ipynb"
+    },
+    {
+      "title": "Birthday Problem",
+      "path": "content/Chapter_01/04_Birthday_Problem.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/04_Birthday_Problem.ipynb"
+    },
+    {
+      "title": "An Exponential Approximation",
+      "path": "content/Chapter_01/05_An_Exponential_Approximation.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/05_An_Exponential_Approximation.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_01/06_Exercises.ipynb",
+      "chapter": 1,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_01/06_Exercises.ipynb"
+    },
+    {
+      "title": "Calculating Chances",
+      "path": "content/Chapter_02/00_Calculating_Chances.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/00_Calculating_Chances.ipynb"
+    },
+    {
+      "title": "Addition",
+      "path": "content/Chapter_02/01_Addition.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/01_Addition.ipynb"
+    },
+    {
+      "title": "Examples",
+      "path": "content/Chapter_02/02_Examples.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/02_Examples.ipynb"
+    },
+    {
+      "title": "Multiplication",
+      "path": "content/Chapter_02/03_Multiplication.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/03_Multiplication.ipynb"
+    },
+    {
+      "title": "More Examples",
+      "path": "content/Chapter_02/04_More_Examples.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/04_More_Examples.ipynb"
+    },
+    {
+      "title": "Updating Probabilities",
+      "path": "content/Chapter_02/05_Updating_Probabilities.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/05_Updating_Probabilities.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_02/06_Exercises.ipynb",
+      "chapter": 2,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_02/06_Exercises.ipynb"
+    },
+    {
+      "title": "Random Variables",
+      "path": "content/Chapter_03/00_Random_Variables.ipynb",
+      "chapter": 3,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_03/00_Random_Variables.ipynb"
+    },
+    {
+      "title": "Functions on an Outcome Space",
+      "path": "content/Chapter_03/01_Functions_on_an_Outcome_Space.ipynb",
+      "chapter": 3,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_03/01_Functions_on_an_Outcome_Space.ipynb"
+    },
+    {
+      "title": "Distributions",
+      "path": "content/Chapter_03/02_Distributions.ipynb",
+      "chapter": 3,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_03/02_Distributions.ipynb"
+    },
+    {
+      "title": "Equality",
+      "path": "content/Chapter_03/03_Equality.ipynb",
+      "chapter": 3,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_03/03_Equality.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_03/04_Exercises.ipynb",
+      "chapter": 3,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_03/04_Exercises.ipynb"
+    },
+    {
+      "title": "Relations Between Variables",
+      "path": "content/Chapter_04/00_Relations_Between_Variables.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/00_Relations_Between_Variables.ipynb"
+    },
+    {
+      "title": "Joint Distributions",
+      "path": "content/Chapter_04/01_Joint_Distributions.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/01_Joint_Distributions.ipynb"
+    },
+    {
+      "title": "Examples",
+      "path": "content/Chapter_04/02_Examples.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/02_Examples.ipynb"
+    },
+    {
+      "title": "Marginal Distributions",
+      "path": "content/Chapter_04/03_Marginal_Distributions.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/03_Marginal_Distributions.ipynb"
+    },
+    {
+      "title": "Conditional Distributions",
+      "path": "content/Chapter_04/04_Conditional_Distributions.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/04_Conditional_Distributions.ipynb"
+    },
+    {
+      "title": "Dependence and Independence",
+      "path": "content/Chapter_04/05_Dependence_and_Independence.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/05_Dependence_and_Independence.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_04/06_Exercises.ipynb",
+      "chapter": 4,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_04/06_Exercises.ipynb"
+    },
+    {
+      "title": "Collections of Events",
+      "path": "content/Chapter_05/00_Collections_of_Events.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/00_Collections_of_Events.ipynb"
+    },
+    {
+      "title": "Bounding the Chance of a Union",
+      "path": "content/Chapter_05/01_Bounding_the_Chance_of_a_Union.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/01_Bounding_the_Chance_of_a_Union.ipynb"
+    },
+    {
+      "title": "Inclusion Exclusion",
+      "path": "content/Chapter_05/02_Inclusion_Exclusion.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/02_Inclusion_Exclusion.ipynb"
+    },
+    {
+      "title": "The Matching Problem",
+      "path": "content/Chapter_05/03_The_Matching_Problem.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/03_The_Matching_Problem.ipynb"
+    },
+    {
+      "title": "Sampling Without Replacement",
+      "path": "content/Chapter_05/04_Sampling_Without_Replacement.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/04_Sampling_Without_Replacement.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_05/05_Exercises.ipynb",
+      "chapter": 5,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_05/05_Exercises.ipynb"
+    },
+    {
+      "title": "Random Counts",
+      "path": "content/Chapter_06/00_Random_Counts.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/00_Random_Counts.ipynb"
+    },
+    {
+      "title": "Binomial Distribution",
+      "path": "content/Chapter_06/01_Binomial_Distribution.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/01_Binomial_Distribution.ipynb"
+    },
+    {
+      "title": "Examples",
+      "path": "content/Chapter_06/02_Examples.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/02_Examples.ipynb"
+    },
+    {
+      "title": "Multinomial Distribution",
+      "path": "content/Chapter_06/03_Multinomial_Distribution.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/03_Multinomial_Distribution.ipynb"
+    },
+    {
+      "title": "The Hypergeometric Revisited",
+      "path": "content/Chapter_06/04_The_Hypergeometric_Revisited.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/04_The_Hypergeometric_Revisited.ipynb"
+    },
+    {
+      "title": "Odds Ratios",
+      "path": "content/Chapter_06/05_Odds_Ratios.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/05_Odds_Ratios.ipynb"
+    },
+    {
+      "title": "Law of Small Numbers",
+      "path": "content/Chapter_06/06_Law_of_Small_Numbers.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/06_Law_of_Small_Numbers.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_06/07_Exercises.ipynb",
+      "chapter": 6,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_06/07_Exercises.ipynb"
+    },
+    {
+      "title": "Poissonization",
+      "path": "content/Chapter_07/00_Poissonization.ipynb",
+      "chapter": 7,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_07/00_Poissonization.ipynb"
+    },
+    {
+      "title": "Poisson Distribution",
+      "path": "content/Chapter_07/01_Poisson_Distribution.ipynb",
+      "chapter": 7,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_07/01_Poisson_Distribution.ipynb"
+    },
+    {
+      "title": "Poissonizing the Binomial",
+      "path": "content/Chapter_07/02_Poissonizing_the_Binomial.ipynb",
+      "chapter": 7,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_07/02_Poissonizing_the_Binomial.ipynb"
+    },
+    {
+      "title": "Poissonizing the Multinomial",
+      "path": "content/Chapter_07/03_Poissonizing_the_Multinomial.ipynb",
+      "chapter": 7,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_07/03_Poissonizing_the_Multinomial.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_07/04_Exercises.ipynb",
+      "chapter": 7,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_07/04_Exercises.ipynb"
+    },
+    {
+      "title": "Expectation",
+      "path": "content/Chapter_08/00_Expectation.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/00_Expectation.ipynb"
+    },
+    {
+      "title": "Definition",
+      "path": "content/Chapter_08/01_Definition.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/01_Definition.ipynb"
+    },
+    {
+      "title": "Applying the Definition",
+      "path": "content/Chapter_08/02_Applying_the_Definition.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/02_Applying_the_Definition.ipynb"
+    },
+    {
+      "title": "Expectations of Functions",
+      "path": "content/Chapter_08/03_Expectations_of_Functions.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/03_Expectations_of_Functions.ipynb"
+    },
+    {
+      "title": "Additivity",
+      "path": "content/Chapter_08/04_Additivity.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/04_Additivity.ipynb"
+    },
+    {
+      "title": "Method of Indicators",
+      "path": "content/Chapter_08/05_Method_of_Indicators.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/05_Method_of_Indicators.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_08/06_Exercises.ipynb",
+      "chapter": 8,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_08/06_Exercises.ipynb"
+    },
+    {
+      "title": "Conditioning Revisited",
+      "path": "content/Chapter_09/00_Conditioning_Revisited.ipynb",
+      "chapter": 9,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_09/00_Conditioning_Revisited.ipynb"
+    },
+    {
+      "title": "Probability by Conditioning",
+      "path": "content/Chapter_09/01_Probability_by_Conditioning.ipynb",
+      "chapter": 9,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_09/01_Probability_by_Conditioning.ipynb"
+    },
+    {
+      "title": "Expectation by Conditioning",
+      "path": "content/Chapter_09/02_Expectation_by_Conditioning.ipynb",
+      "chapter": 9,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_09/02_Expectation_by_Conditioning.ipynb"
+    },
+    {
+      "title": "Expected Waiting Times",
+      "path": "content/Chapter_09/03_Expected_Waiting_Times.ipynb",
+      "chapter": 9,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_09/03_Expected_Waiting_Times.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_09/04_Exercises.ipynb",
+      "chapter": 9,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_09/04_Exercises.ipynb"
+    },
+    {
+      "title": "Markov Chains",
+      "path": "content/Chapter_10/00_Markov_Chains.ipynb",
+      "chapter": 10,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_10/00_Markov_Chains.ipynb"
+    },
+    {
+      "title": "Transitions",
+      "path": "content/Chapter_10/01_Transitions.ipynb",
+      "chapter": 10,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_10/01_Transitions.ipynb"
+    },
+    {
+      "title": "Deconstructing Chains",
+      "path": "content/Chapter_10/02_Deconstructing_Chains.ipynb",
+      "chapter": 10,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_10/02_Deconstructing_Chains.ipynb"
+    },
+    {
+      "title": "Long Run Behavior",
+      "path": "content/Chapter_10/03_Long_Run_Behavior.ipynb",
+      "chapter": 10,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_10/03_Long_Run_Behavior.ipynb"
+    },
+    {
+      "title": "Examples",
+      "path": "content/Chapter_10/04_Examples.ipynb",
+      "chapter": 10,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_10/04_Examples.ipynb"
+    },
+    {
+      "title": "Markov Chain Monte Carlo",
+      "path": "content/Chapter_11/00_Markov_Chain_Monte_Carlo.ipynb",
+      "chapter": 11,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_11/00_Markov_Chain_Monte_Carlo.ipynb"
+    },
+    {
+      "title": "Balance and Detailed Balance",
+      "path": "content/Chapter_11/01_Balance_and_Detailed_Balance.ipynb",
+      "chapter": 11,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_11/01_Balance_and_Detailed_Balance.ipynb"
+    },
+    {
+      "title": "Code Breaking",
+      "path": "content/Chapter_11/02_Code_Breaking.ipynb",
+      "chapter": 11,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_11/02_Code_Breaking.ipynb"
+    },
+    {
+      "title": "Metropolis Algorithm",
+      "path": "content/Chapter_11/03_Metropolis_Algorithm.ipynb",
+      "chapter": 11,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_11/03_Metropolis_Algorithm.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_11/04_Exercises.ipynb",
+      "chapter": 11,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_11/04_Exercises.ipynb"
+    },
+    {
+      "title": "Standard Deviation",
+      "path": "content/Chapter_12/00_Standard_Deviation.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/00_Standard_Deviation.ipynb"
+    },
+    {
+      "title": "Definition",
+      "path": "content/Chapter_12/01_Definition.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/01_Definition.ipynb"
+    },
+    {
+      "title": "Prediction and Estimation",
+      "path": "content/Chapter_12/02_Prediction_and_Estimation.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/02_Prediction_and_Estimation.ipynb"
+    },
+    {
+      "title": "Bounds",
+      "path": "content/Chapter_12/03_Bounds.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/03_Bounds.ipynb"
+    },
+    {
+      "title": "Heavy Tails",
+      "path": "content/Chapter_12/04_Heavy_Tails.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/04_Heavy_Tails.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_12/05_Exercises.ipynb",
+      "chapter": 12,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_12/05_Exercises.ipynb"
+    },
+    {
+      "title": "Variance Via Covariance",
+      "path": "content/Chapter_13/00_Variance_Via_Covariance.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/00_Variance_Via_Covariance.ipynb"
+    },
+    {
+      "title": "Covariance",
+      "path": "content/Chapter_13/01_Covariance.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/01_Covariance.ipynb"
+    },
+    {
+      "title": "Properties of Covariance",
+      "path": "content/Chapter_13/02_Properties_of_Covariance.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/02_Properties_of_Covariance.ipynb"
+    },
+    {
+      "title": "Sums of Independent Variables",
+      "path": "content/Chapter_13/03_Sums_of_Independent_Variables.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/03_Sums_of_Independent_Variables.ipynb"
+    },
+    {
+      "title": "Symmetry and Indicators",
+      "path": "content/Chapter_13/04_Symmetry_and_Indicators.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/04_Symmetry_and_Indicators.ipynb"
+    },
+    {
+      "title": "Finite Population Correction",
+      "path": "content/Chapter_13/05_Finite_Population_Correction.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/05_Finite_Population_Correction.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_13/06_Exercises.ipynb",
+      "chapter": 13,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_13/06_Exercises.ipynb"
+    },
+    {
+      "title": "The Central Limit Theorem",
+      "path": "content/Chapter_14/00_The_Central_Limit_Theorem.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/00_The_Central_Limit_Theorem.ipynb"
+    },
+    {
+      "title": "Exact Distribution of a Sum",
+      "path": "content/Chapter_14/01_Exact_Distribution_of_a_Sum.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/01_Exact_Distribution_of_a_Sum.ipynb"
+    },
+    {
+      "title": "PGFs in NumPy",
+      "path": "content/Chapter_14/02_PGFs_in_NumPy.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/02_PGFs_in_NumPy.ipynb"
+    },
+    {
+      "title": "Central Limit Theorem",
+      "path": "content/Chapter_14/03_Central_Limit_Theorem.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/03_Central_Limit_Theorem.ipynb"
+    },
+    {
+      "title": "SciPy and Normal Curves",
+      "path": "content/Chapter_14/04_SciPy_and_Normal_Curves.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/04_SciPy_and_Normal_Curves.ipynb"
+    },
+    {
+      "title": "The Sample Mean",
+      "path": "content/Chapter_14/05_The_Sample_Mean.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/05_The_Sample_Mean.ipynb"
+    },
+    {
+      "title": "Confidence Intervals",
+      "path": "content/Chapter_14/06_Confidence_Intervals.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/06_Confidence_Intervals.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_14/07_Exercises.ipynb",
+      "chapter": 14,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/07_Exercises.ipynb"
+    },
+    {
+      "title": "baby",
+      "path": "content/Chapter_14/baby.csv",
+      "chapter": 14,
+      "kind": "Dataset",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_14/baby.csv"
+    },
+    {
+      "title": "Continuous Distributions",
+      "path": "content/Chapter_15/00_Continuous_Distributions.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/00_Continuous_Distributions.ipynb"
+    },
+    {
+      "title": "Density and CDF",
+      "path": "content/Chapter_15/01_Density_and_CDF.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/01_Density_and_CDF.ipynb"
+    },
+    {
+      "title": "The Meaning of Density",
+      "path": "content/Chapter_15/02_The_Meaning_of_Density.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/02_The_Meaning_of_Density.ipynb"
+    },
+    {
+      "title": "Expectation",
+      "path": "content/Chapter_15/03_Expectation.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/03_Expectation.ipynb"
+    },
+    {
+      "title": "Exponential Distribution",
+      "path": "content/Chapter_15/04_Exponential_Distribution.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/04_Exponential_Distribution.ipynb"
+    },
+    {
+      "title": "Calculus in SymPy",
+      "path": "content/Chapter_15/05_Calculus_in_SymPy.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/05_Calculus_in_SymPy.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_15/06_Exercises.ipynb",
+      "chapter": 15,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_15/06_Exercises.ipynb"
+    },
+    {
+      "title": "Transformations",
+      "path": "content/Chapter_16/00_Transformations.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/00_Transformations.ipynb"
+    },
+    {
+      "title": "Linear Transformations",
+      "path": "content/Chapter_16/01_Linear_Transformations.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/01_Linear_Transformations.ipynb"
+    },
+    {
+      "title": "Monotone Functions",
+      "path": "content/Chapter_16/02_Monotone_Functions.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/02_Monotone_Functions.ipynb"
+    },
+    {
+      "title": "Simulation via the CDF",
+      "path": "content/Chapter_16/03_Simulation_via_the_CDF.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/03_Simulation_via_the_CDF.ipynb"
+    },
+    {
+      "title": "Two to One Functions",
+      "path": "content/Chapter_16/04_Two_to_One_Functions.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/04_Two_to_One_Functions.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_16/05_Exercises.ipynb",
+      "chapter": 16,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_16/05_Exercises.ipynb"
+    },
+    {
+      "title": "Joint Densities",
+      "path": "content/Chapter_17/00_Joint_Densities.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/00_Joint_Densities.ipynb"
+    },
+    {
+      "title": "Probabilities and Expectations",
+      "path": "content/Chapter_17/01_Probabilities_and_Expectations.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/01_Probabilities_and_Expectations.ipynb"
+    },
+    {
+      "title": "Independence",
+      "path": "content/Chapter_17/02_Independence.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/02_Independence.ipynb"
+    },
+    {
+      "title": "Marginal and Conditional Densities",
+      "path": "content/Chapter_17/03_Marginal_and_Conditional_Densities.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/03_Marginal_and_Conditional_Densities.ipynb"
+    },
+    {
+      "title": "Beta Densities with Integer Parameters",
+      "path": "content/Chapter_17/04_Beta_Densities_with_Integer_Parameters.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/04_Beta_Densities_with_Integer_Parameters.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_17/05_Exercises.ipynb",
+      "chapter": 17,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_17/05_Exercises.ipynb"
+    },
+    {
+      "title": "The Normal and Gamma Families",
+      "path": "content/Chapter_18/00_The_Normal_and_Gamma_Families.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/00_The_Normal_and_Gamma_Families.ipynb"
+    },
+    {
+      "title": "Standard Normal Basics",
+      "path": "content/Chapter_18/01_Standard_Normal_Basics.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/01_Standard_Normal_Basics.ipynb"
+    },
+    {
+      "title": "Sums of Independent Normal Variables",
+      "path": "content/Chapter_18/02_Sums_of_Independent_Normal_Variables.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/02_Sums_of_Independent_Normal_Variables.ipynb"
+    },
+    {
+      "title": "The Gamma Family",
+      "path": "content/Chapter_18/03_The_Gamma_Family.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/03_The_Gamma_Family.ipynb"
+    },
+    {
+      "title": "Chi Squared Distributions",
+      "path": "content/Chapter_18/04_Chi_Squared_Distributions.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/04_Chi_Squared_Distributions.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_18/05_Exercises.ipynb",
+      "chapter": 18,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_18/05_Exercises.ipynb"
+    },
+    {
+      "title": "Distributions of Sums",
+      "path": "content/Chapter_19/00_Distributions_of_Sums.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/00_Distributions_of_Sums.ipynb"
+    },
+    {
+      "title": "Convolution Formula",
+      "path": "content/Chapter_19/01_Convolution_Formula.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/01_Convolution_Formula.ipynb"
+    },
+    {
+      "title": "Moment Generating Functions",
+      "path": "content/Chapter_19/02_Moment_Generating_Functions.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/02_Moment_Generating_Functions.ipynb"
+    },
+    {
+      "title": "MGFs Normal and the CLT",
+      "path": "content/Chapter_19/03_MGFs_Normal_and_the_CLT.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/03_MGFs_Normal_and_the_CLT.ipynb"
+    },
+    {
+      "title": "Chernoff Bound",
+      "path": "content/Chapter_19/04_Chernoff_Bound.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/04_Chernoff_Bound.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_19/05_Exercises.ipynb",
+      "chapter": 19,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_19/05_Exercises.ipynb"
+    },
+    {
+      "title": "Approaches to Estimation",
+      "path": "content/Chapter_20/00_Approaches_to_Estimation.ipynb",
+      "chapter": 20,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_20/00_Approaches_to_Estimation.ipynb"
+    },
+    {
+      "title": "Maximum Likelihood",
+      "path": "content/Chapter_20/01_Maximum_Likelihood.ipynb",
+      "chapter": 20,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_20/01_Maximum_Likelihood.ipynb"
+    },
+    {
+      "title": "Independence Revisited",
+      "path": "content/Chapter_20/02_Independence_Revisited.ipynb",
+      "chapter": 20,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_20/02_Independence_Revisited.ipynb"
+    },
+    {
+      "title": "Prior and Posterior",
+      "path": "content/Chapter_20/03_Prior_and_Posterior.ipynb",
+      "chapter": 20,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_20/03_Prior_and_Posterior.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_20/04_Exercises.ipynb",
+      "chapter": 20,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_20/04_Exercises.ipynb"
+    },
+    {
+      "title": "The Beta and the Binomial",
+      "path": "content/Chapter_21/00_The_Beta_and_the_Binomial.ipynb",
+      "chapter": 21,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_21/00_The_Beta_and_the_Binomial.ipynb"
+    },
+    {
+      "title": "Updating and Prediction",
+      "path": "content/Chapter_21/01_Updating_and_Prediction.ipynb",
+      "chapter": 21,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_21/01_Updating_and_Prediction.ipynb"
+    },
+    {
+      "title": "Beta Binomial Distribution",
+      "path": "content/Chapter_21/02_Beta_Binomial_Distribution.ipynb",
+      "chapter": 21,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_21/02_Beta_Binomial_Distribution.ipynb"
+    },
+    {
+      "title": "Long Run Proportion of Heads",
+      "path": "content/Chapter_21/03_Long_Run_Proportion_of_Heads.ipynb",
+      "chapter": 21,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_21/03_Long_Run_Proportion_of_Heads.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_21/04_Exercises.ipynb",
+      "chapter": 21,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_21/04_Exercises.ipynb"
+    },
+    {
+      "title": "Prediction",
+      "path": "content/Chapter_22/00_Prediction.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/00_Prediction.ipynb"
+    },
+    {
+      "title": "Conditional Expectation Projection",
+      "path": "content/Chapter_22/01_Conditional_Expectation_Projection.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/01_Conditional_Expectation_Projection.ipynb"
+    },
+    {
+      "title": "Least Squares Predictor",
+      "path": "content/Chapter_22/02_Least_Squares_Predictor.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/02_Least_Squares_Predictor.ipynb"
+    },
+    {
+      "title": "Variance by Conditioning",
+      "path": "content/Chapter_22/03_Variance_by_Conditioning.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/03_Variance_by_Conditioning.ipynb"
+    },
+    {
+      "title": "Examples",
+      "path": "content/Chapter_22/04_Examples.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/04_Examples.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_22/05_Exercises.ipynb",
+      "chapter": 22,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_22/05_Exercises.ipynb"
+    },
+    {
+      "title": "Multivariate Normal RVs",
+      "path": "content/Chapter_23/00_Multivariate_Normal_RVs.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/00_Multivariate_Normal_RVs.ipynb"
+    },
+    {
+      "title": "Random Vectors",
+      "path": "content/Chapter_23/01_Random_Vectors.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/01_Random_Vectors.ipynb"
+    },
+    {
+      "title": "Multivariate Normal Vectors",
+      "path": "content/Chapter_23/02_Multivariate_Normal_Vectors.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/02_Multivariate_Normal_Vectors.ipynb"
+    },
+    {
+      "title": "Multivariate Normal Density",
+      "path": "content/Chapter_23/03_Multivariate_Normal_Density.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/03_Multivariate_Normal_Density.ipynb"
+    },
+    {
+      "title": "Independence",
+      "path": "content/Chapter_23/04_Independence.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/04_Independence.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_23/05_Exercises.ipynb",
+      "chapter": 23,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_23/05_Exercises.ipynb"
+    },
+    {
+      "title": "Simple Linear Regression",
+      "path": "content/Chapter_24/00_Simple_Linear_Regression.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/00_Simple_Linear_Regression.ipynb"
+    },
+    {
+      "title": "Linear Least Squares",
+      "path": "content/Chapter_24/01_Linear_Least_Squares.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/01_Linear_Least_Squares.ipynb"
+    },
+    {
+      "title": "Bivariate Normal Distribution",
+      "path": "content/Chapter_24/02_Bivariate_Normal_Distribution.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/02_Bivariate_Normal_Distribution.ipynb"
+    },
+    {
+      "title": "Regression and Bivariate Normal",
+      "path": "content/Chapter_24/03_Regression_and_Bivariate_Normal.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/03_Regression_and_Bivariate_Normal.ipynb"
+    },
+    {
+      "title": "Regression Equation",
+      "path": "content/Chapter_24/04_Regression_Equation.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/04_Regression_Equation.ipynb"
+    },
+    {
+      "title": "Exercises",
+      "path": "content/Chapter_24/05_Exercises.ipynb",
+      "chapter": 24,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_24/05_Exercises.ipynb"
+    },
+    {
+      "title": "Multiple Regression",
+      "path": "content/Chapter_25/00_Multiple_Regression.ipynb",
+      "chapter": 25,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_25/00_Multiple_Regression.ipynb"
+    },
+    {
+      "title": "Bilinearity in Matrix Notation",
+      "path": "content/Chapter_25/01_Bilinearity_in_Matrix_Notation.ipynb",
+      "chapter": 25,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_25/01_Bilinearity_in_Matrix_Notation.ipynb"
+    },
+    {
+      "title": "Best Linear Predictor",
+      "path": "content/Chapter_25/02_Best_Linear_Predictor.ipynb",
+      "chapter": 25,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_25/02_Best_Linear_Predictor.ipynb"
+    },
+    {
+      "title": "Multivariate Normal Conditioning",
+      "path": "content/Chapter_25/03_Multivariate_Normal_Conditioning.ipynb",
+      "chapter": 25,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_25/03_Multivariate_Normal_Conditioning.ipynb"
+    },
+    {
+      "title": "Multiple Regression",
+      "path": "content/Chapter_25/04_Multiple_Regression.ipynb",
+      "chapter": 25,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/Chapter_25/04_Multiple_Regression.ipynb"
+    },
+    {
+      "title": "To the Student",
+      "path": "content/To_the_Student.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/prob140/textbook/blob/master/content/To_the_Student.ipynb"
+    },
+    {
+      "title": "requirements",
+      "path": "requirements.txt",
+      "chapter": null,
+      "kind": "Dataset",
+      "url": "https://github.com/prob140/textbook/blob/master/requirements.txt"
+    },
+    {
+      "title": "Homework 01",
+      "path": "hw/Homework_01.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_01.ipynb"
+    },
+    {
+      "title": "Homework 02",
+      "path": "hw/Homework_02.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_02.ipynb"
+    },
+    {
+      "title": "Homework 03",
+      "path": "hw/Homework_03.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_03.ipynb"
+    },
+    {
+      "title": "Homework 04",
+      "path": "hw/Homework_04.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_04.ipynb"
+    },
+    {
+      "title": "Homework 05",
+      "path": "hw/Homework_05.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_05.ipynb"
+    },
+    {
+      "title": "Homework 06",
+      "path": "hw/Homework_06.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_06.ipynb"
+    },
+    {
+      "title": "Homework 07",
+      "path": "hw/Homework_07.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_07.ipynb"
+    },
+    {
+      "title": "Homework 08",
+      "path": "hw/Homework_08.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_08.ipynb"
+    },
+    {
+      "title": "Homework 09",
+      "path": "hw/Homework_09.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_09.ipynb"
+    },
+    {
+      "title": "Homework 10",
+      "path": "hw/Homework_10.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_10.ipynb"
+    },
+    {
+      "title": "Homework 11",
+      "path": "hw/Homework_11.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/hw/Homework_11.ipynb"
+    },
+    {
+      "title": "Lab 01",
+      "path": "lab/Lab_01.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_01.ipynb"
+    },
+    {
+      "title": "Lab 02",
+      "path": "lab/Lab_02.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_02.ipynb"
+    },
+    {
+      "title": "Lab 03",
+      "path": "lab/Lab_03.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_03.ipynb"
+    },
+    {
+      "title": "secret strings",
+      "path": "lab/Lab_03_data/secret_strings.p",
+      "chapter": null,
+      "kind": "Dataset",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_03_data/secret_strings.p"
+    },
+    {
+      "title": "warandpeace",
+      "path": "lab/Lab_03_data/warandpeace.txt",
+      "chapter": null,
+      "kind": "Dataset",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_03_data/warandpeace.txt"
+    },
+    {
+      "title": "Lab 04",
+      "path": "lab/Lab_04.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_04.ipynb"
+    },
+    {
+      "title": "Lab 05",
+      "path": "lab/Lab_05.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_05.ipynb"
+    },
+    {
+      "title": "Lab 06",
+      "path": "lab/Lab_06.ipynb",
+      "chapter": null,
+      "kind": "Notebook",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_06.ipynb"
+    },
+    {
+      "title": "big CA earthquakes",
+      "path": "lab/Lab_06_data/big_CA_earthquakes.csv",
+      "chapter": null,
+      "kind": "Dataset",
+      "url": "https://github.com/data-140-berkeley/materials-fa26/blob/main/lab/Lab_06_data/big_CA_earthquakes.csv"
+    }
+  ],
+  "coverage": "One original introductory reel per textbook chapter. Full source notebooks and datasets are linked, not reproduced. These reels do not replace all chapter sections or exercises."
+}

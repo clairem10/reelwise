@@ -1,0 +1,1 @@
+export default function Loading(){return <main className="setup" aria-busy="true"><span className="sticker">REELWISE</span><h1>One moment.<br/>A new idea awaits.</h1><p role="status">Loading your lessons…</p></main>}
