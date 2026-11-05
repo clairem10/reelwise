@@ -1,8 +1,8 @@
-node_modules
-.next
-.git
-.env*
+/node_modules/
+/.next/
+/.git/
+/.env*
 !/.env.example
-scripts
-supabase
-tests
+/scripts/
+/supabase/
+/tests/
